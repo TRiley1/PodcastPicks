@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 const SideMenu = () => {
     return ( 
         <ul>
-            <li><Link to="/favourites">Favourites</Link></li>
-            <li><Link to="/explore">Explore</Link></li>
-            <li><Link to="/about">About</Link></li>
+            <li><Link to="api/podcasts/favourites">Favourites</Link></li>
+            <li><Link to="api/podcasts/explore">Explore</Link></li>
+            <li><Link to="api/podcasts/about">About</Link></li>
         </ul>
      );
 }
