@@ -1,12 +1,8 @@
 import Podcast from "./Podcast";
 
-const OurPicks = ({ shows }) => {
-
-    
-
+const OurPicks = ({ shows, addFav, isFav, favShows }) => {
   const ourShows = shows.map((show, index) => {
-    console.log(show);
-    return <Podcast show={show} key={index} />;
+    return <Podcast show={show} key={index} addFav={addFav} isFav={isFav} favShows={favShows}/>;
   });
 
   return (

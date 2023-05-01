@@ -1,13 +1,29 @@
-const Podcast = ({show}) => {
+import { useState } from "react";
 
-    if (!show) return
+const Podcast = ({ show, addFav }) => {
+  const [isFav, setIsFav] = useState(false);
 
-    return ( 
-        <>
-            <img src={show.images[2].url} />
-            <h5>{show.name}</h5>
-        </>
-     );
-}
- 
+
+  const handleFavClick = () => {
+    addFav(show);
+    setIsFav(!isFav);
+  };
+
+  if (!show) return;
+
+  return (
+    <div>
+      <img src={show.images[2].url} />
+      <h5>{show.name}</h5>
+      {!isFav ? (
+        <button onClick={handleFavClick} addFav={addFav}>
+          Add to faves
+        </button>
+      ) : (
+        <button>Remove from faves</button>
+      )}
+    </div>
+  );
+};
+
 export default Podcast;
