@@ -1,7 +1,9 @@
 const Podcast = ({show}) => {
+
+    if (!show) return
+
     return ( 
         <>
-            <h5>I'm a podcast</h5>
             <img src={show.images[2].url} />
             <h5>{show.name}</h5>
         </>
