@@ -1,0 +1,3 @@
+use podcasts;
+db.dropDatabase();
+
