@@ -7,10 +7,26 @@ const Podcast = ({ show, addFav }) => {
 
   if (!show) return;
 
+  const postFavourite = (payload) => {
+    return fetch("http://localhost:9000/api/podcasts", {
+        method: 'POST',
+        body: JSON.stringify(payload),
+        headers: { 'Content-Type': 'application/json' }
+    })
+    .then(res => res.json())
+    .then(data => {
+      return {
+        ...data,
+        ...payload
+      }
+    })
+}
+
 
   const handleFavClick = () => {
-    addFav(show);
+    addFav(show)
     setIsFav(!isFav);
+    postFavourite(show)
   };
 
   const handleSelectClick = (e) => {
