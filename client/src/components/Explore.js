@@ -5,6 +5,8 @@ const Explore = ({ shows }) => {
   const [sortedShows, setSortedShows] = useState(shows);
   const [searchText, setSearchText] = useState("");
 
+  if (!shows) return
+
   const sortedShowsToMapThrough = sortedShows.map((show, index) => {
     return <Podcast show={show} key={index} />;
   });
