@@ -25,7 +25,7 @@ const PodcastPicksContainer = () => {
     "https://api.spotify.com/v1/shows?ids=4rOoJ6Egrf8K2IrywzwOMk,7g6RO74SVquuVd8sbwzk7q,0Z0KhuivFm1Ry4WIpWspPv,7iQXmUT7XGuZSzAMjoNWlX,1L4biGtn1rrp8yBmV0MFlb,6cKm5noj2BK3M2mJKcXswC,68XHjBcgGBEA8HQcIHZwl5,1Ysx8g1Iw42gESAtegrFaH,1Zuurv8AZFWti60lSXiDgz,3g89DYSv46rN1AnYmBjDgc,7oZTRX8Q4OtD1SgKRbiXw5,5yl10o2UFyMc9vzVKXVQ3o,0azMejb7zrmAqctVsUSAdq,79CkJF3UJTHFV8Dse3Oy0P,6olvQhNhQwMbGG26t3rVgM,5iaZ78Bqj6Jgrcqjs6NBG7,2K186zrvRgeE2w0wQjbaw7,0XrOqvxlqQI6bmdYHuIVnr,7zdc2S4VPAGPYJ3ecjzBNh,1xDawqT8Cgm6HAnbpFX5T5,63hkYLOuRSVzhFNmMLX8wK,4UjhcQPewUJwOgGHWtjTuC,7bnjJ7Va1nM07Um4Od55dW,7Cvsbcjhtur7nplC148TWy,2F9rNDThYAfyLdy9Pv3t0i,3gaGfrqgnVqUBNDdtv5p3S,0zXLdM0YV1ukb8p8WzEG6D,6ixcVOUX3HR8WiVohQJXLF&market=GB";
   const accessToken =
 
-    "BQD1ubalDfApxmxmOMfjnxepXsumRH0iG09SB3e-osYhkRllH3EGA11GSwrMi4YW20EwJ7wBwf3B5s8lvBjWz5KnZhrZUDPgo7PYH1JYqX8BpyekLru8";
+    "BQCuBkiQ9aD8L9N5wRZddpi3IzksyCrQ854QN-wrxAx2bE3kCpx87hH-Lq2pGj6HppbEJXeX1gsq2hHWya8501Frzi36mxumL2eT-hciS3NLqd7WC7n4";
 
 
 
@@ -54,6 +54,13 @@ const PodcastPicksContainer = () => {
     setFavShows([...favShows, show]);
   };
 
+  const handleFavDelete = (id) => {
+    const newFavs = favShows.filter((show) => {
+      return show.id !== id
+    })
+    setFavShows(newFavs)
+  }
+
   return (
     <>
       <Router>
@@ -69,7 +76,7 @@ const PodcastPicksContainer = () => {
           />
           <Route
             path="/favourites"
-            element={<Favourites favShows={favShows} />}
+            element={<Favourites favShows={favShows} handleFavDelete={handleFavDelete}/>}
           />
           <Route
             path="/explore"
