@@ -13,7 +13,7 @@ const OurPicks = ({ shows, addFav, isFav, favShows }) => {
 
   return (
     <>
-      <h4>Our Picks</h4>
+      <h4 className="our-picks-header">Our Picks</h4>
       {ourShows}
     </>
   );
