@@ -27,7 +27,6 @@ const PodcastPicksContainer = () => {
     "BQAbmVfwAyle-mjZpTCro0LSdsg9y2bI-6zq1trdxUmQveQKf4UtwdFfhdIo4WjRNy_7Y3DC0HyAw2VQLbjTnNJXHLf_OdY3YrMylF6BU5qh_rXIb0K3";
 
 
-
   const getShows = () => {
     fetch(showsUrl, {
       method: "GET",
@@ -71,7 +70,7 @@ const PodcastPicksContainer = () => {
           />
           <Route
             path="/explore"
-            element={<Explore addFav={addFav} />}
+            element={<Explore addFav={addFav} shows={shows}/>}
           />
           <Route path="/about" element={<About />} />
         </Routes>
