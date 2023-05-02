@@ -70,7 +70,7 @@ const PodcastPicksContainer = () => {
           />
           <Route
             path="/explore"
-            element={<PodcastByGenre addFav={addFav} />}
+            element={<Explore addFav={addFav} />}
           />
           <Route path="/about" element={<About />} />
         </Routes>
