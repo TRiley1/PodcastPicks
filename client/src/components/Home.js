@@ -1,5 +1,4 @@
 import OurPicks from "./OurPicks";
-import TopPicks from "./TopPicks";
 import Search from "./Search";
 import React, { useState, useEffect } from 'react';
 
@@ -33,7 +32,6 @@ const Home = ({ shows, addFav }) => {
       <h1>Home</h1>
       <Search searchHome={searchHome}/>
       <OurPicks shows={filterShows} addFav={addFav} />
-      <TopPicks shows={filterShows} addFav={addFav} />
     </>
   );
 };
