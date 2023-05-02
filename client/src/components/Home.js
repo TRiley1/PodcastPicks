@@ -29,7 +29,7 @@ const Home = ({ shows, addFav }) => {
 
   return (
     <>
-      <h1>Home</h1>
+      <h1>PodcastPicks</h1>
       <Search searchHome={searchHome}/>
       <OurPicks shows={filterShows} addFav={addFav} />
     </>
