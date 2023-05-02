@@ -10,6 +10,7 @@ import PodcastDetail from "../components/PodcastDetail";
 const PodcastPicksContainer = () => {
   const [shows, setShows] = useState([]);
   const [favShows, setFavShows] = useState([]);
+  
 
 
   useEffect(() => {
@@ -25,6 +26,7 @@ const PodcastPicksContainer = () => {
   const accessToken =
 
     "BQB4U_wVXeLKrbgEhyqzWtm-AcbzYtFIt0A36-QfgghKsUOmbPbbkXccisWm4SCZlJull3_DivQUrRLnIPHMHPCAKqPhKZ35wUwnXx6lYH_kDqPbfcBy";
+
 
 
   const getShows = () => {

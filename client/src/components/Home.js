@@ -11,14 +11,18 @@ const Home = ({ shows, addFav }) => {
 
   useEffect(() => {
     const searchTerm = search.toLowerCase()
-
+  
     const searchFilter = shows.filter((show) => {
         return show.name.toLowerCase().includes(searchTerm)
     })
-
-
-    setFilterShows(searchFilter)
-}, [search])
+  
+    if (searchFilter.length === 0) {
+      setFilterShows(shows)
+    } else {
+      setFilterShows(searchFilter)
+    }
+  }, [search, shows])
+  
 
   const searchHome = (value) => {
     setSearch(value)
