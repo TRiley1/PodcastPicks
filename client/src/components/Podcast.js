@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Podcast = ({ show, addFav }) => {
   const [isFav, setIsFav] = useState(false);
@@ -22,41 +22,22 @@ const Podcast = ({ show, addFav }) => {
     })
 }
 
-
   const handleFavClick = () => {
     addFav(show)
     setIsFav(!isFav);
     postFavourite(show)
   };
 
-  const handleSelectClick = (e) => {
-    getSelected()
+  const handleSelectClick = () => {
+
     };
   
-
-  const URL = `https://api.spotify.com/v1/shows/${show.id}?market=GB`
-  console.log(URL)
-  const accessToken = 'BQCwWaSxLH8dJhTHg4SaIsYFJwHnZQiaIiVePDrh9naZqEccH_WvoYOm02GacSKDoMAf3mQVWAVx8wsnin9eeKOmpr-hHSIUjy9SMW3IAn2gaBdgB49d'
-
-  const getSelected = () => {
-    fetch(URL, {
-      method: "GET",
-      headers: {
-        Authorization: "Bearer " + accessToken,
-      },
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        setSelected(data);
-      })
-    }
-
   return (
 
     <div>
     {selected ? (
       <div>
-        <Link to={`podcast/${show.id}`}><img onClick={handleSelectClick} src={show.images[1].url} />
+        <Link to={`podcast/${show.id}`}><img onClick={handleSelectClick} src={show.images[2].url} />
         <h5>{show.name}</h5></Link>
         <p>{selected.description}</p>
         <button onClick={handleFavClick}>
@@ -65,11 +46,11 @@ const Podcast = ({ show, addFav }) => {
       </div>
     ) : (
       <div>
-        <img onClick={handleSelectClick} src={show.images[1].url} />
+        <img src={show.images[2].url} />
         <h5>{show.name}</h5>
         {!isFav ? (
           <button onClick={handleFavClick} addFav={addFav}>
-            Add to faves
+            Add to faves                
           </button>
         ) : (
           <button>Remove from faves</button>
