@@ -29,7 +29,7 @@ const Explore = ({ shows }) => {
   };
 
   const sortAToZ = () => {
-    const aToZShows = shows.sort((a, b) => (a.name > b.name ? 1 : -1));
+    const aToZShows = shows.toSorted((a, b) => (a.name > b.name ? 1 : -1));
     setSortedShows(aToZShows);
   };
 

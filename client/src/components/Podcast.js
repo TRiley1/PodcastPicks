@@ -57,8 +57,10 @@ const Podcast = ({ show, addFav }) => {
     <div>
     {selected ? (
       <div>
-        <Link to={`podcast/${show.id}`}><img onClick={handleSelectClick} src={show.images[2].url} />
-        <h5>{show.name}</h5></Link>
+        <Link to={`podcast/${show.id}`}>
+          <img src={show.images[2].url} />
+          <h5>{show.name}</h5>
+        </Link>
         <p>{selected.description}</p>
         <button onClick={handleFavClick}>
           {!isFav ? "Add to faves" : "Remove from faves"}
@@ -66,8 +68,9 @@ const Podcast = ({ show, addFav }) => {
       </div>
     ) : (
       <div>
-        <img src={show.images[2].url} />
-        <h5>{show.name}</h5>
+      <Link to={`podcast/${show.id}`}>
+      <img src={show.images[2].url} />
+        <h5>{show.name}</h5></Link>
         {!isFav ? (
           <button onClick={handleFavClick} addFav={addFav}>
             Add to faves                
