@@ -18,7 +18,7 @@ const Podcast = ({ show, addFav }) => {
 
   const URL = `https://api.spotify.com/v1/shows/${show.id}?market=GB`
   console.log(URL)
-  const accessToken = 'BQBX3alEK2KQlLLhUKBleP563spqpMKx6DXm-RYr6O1a4IRtebJKG_scGoItzv-XZcHYq92In8XFXCNlYwfUSsCs5oFYMb5AON386VJjiu1LxBce2e7K'
+  const accessToken = 'BQCwWaSxLH8dJhTHg4SaIsYFJwHnZQiaIiVePDrh9naZqEccH_WvoYOm02GacSKDoMAf3mQVWAVx8wsnin9eeKOmpr-hHSIUjy9SMW3IAn2gaBdgB49d'
 
   const getSelected = () => {
     fetch(URL, {
