@@ -29,6 +29,7 @@ const PodcastPicksContainer = () => {
 
 
 
+
   const getShows = () => {
     fetch(showsUrl, {
       method: "GET",
@@ -64,7 +65,7 @@ const PodcastPicksContainer = () => {
           />
           <Route
             path="/podcast/:id"
-            element={<PodcastDetail shows={shows} addFav={addFav} favShows={favShows}/>}
+            element={<PodcastDetail shows={shows} accessToken={accessToken}/>}
           />
           <Route
             path="/favourites"
