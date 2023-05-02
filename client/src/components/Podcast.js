@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link, useParams } from "react-router-dom";
 
 const Podcast = ({ show, addFav }) => {
   const [isFav, setIsFav] = useState(false);
@@ -28,9 +29,10 @@ const Podcast = ({ show, addFav }) => {
     postFavourite(show)
   };
 
-  const handleSelectClick = () => {
+  const handleSelectClick = (e) => {
     getSelected()
-  }
+    };
+  
 
   const URL = `https://api.spotify.com/v1/shows/${show.id}?market=GB`
   console.log(URL)
@@ -48,14 +50,14 @@ const Podcast = ({ show, addFav }) => {
         setSelected(data);
       })
     }
-  
 
   return (
+
     <div>
     {selected ? (
       <div>
-        <img onClick={handleSelectClick} src={show.images[1].url} />
-        <h5>{show.name}</h5>
+        <Link to={`podcast/${show.id}`}><img onClick={handleSelectClick} src={show.images[1].url} />
+        <h5>{show.name}</h5></Link>
         <p>{selected.description}</p>
         <button onClick={handleFavClick}>
           {!isFav ? "Add to faves" : "Remove from faves"}

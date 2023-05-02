@@ -1,10 +1,11 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, useParams } from "react-router-dom";
 import React, { useState, useEffect } from "react";
 import NavBar from "../components/NavBar";
 import Favourites from "../components/Favourites";
 import PodcastByGenre from "../components/PodcastByGenre";
 import About from "../components/About";
 import Home from "../components/Home";
+import PodcastDetail from "../components/PodcastDetail";
 
 const PodcastPicksContainer = () => {
   const [shows, setShows] = useState([]);
@@ -57,6 +58,10 @@ const PodcastPicksContainer = () => {
           <Route
             path="/"
             element={<Home shows={shows} addFav={addFav} favShows={favShows}/>}
+          />
+          <Route
+            path="/podcast/:id"
+            element={<PodcastDetail shows={shows} addFav={addFav} favShows={favShows}/>}
           />
           <Route
             path="/favourites"
