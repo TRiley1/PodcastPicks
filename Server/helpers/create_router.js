@@ -28,17 +28,29 @@ const createRouter = function (collection) {
       .catch(handleError(res));
   });
 
-  router.post("/", (req, res) => {
-    const newDatas = req.body;
-    collection.insertMany(newDatas).then((result) => {
-      res
-        .json({
-          insertedCount: result.insertedCount,
-          insertedIds: result.insertedIds,
-        })
-        // .catch(handleError(res));
+  // router.post("/", (req, res) => {
+  //   const newData = req.body;
+  //   collection.insertOne(newData).then((result) => {
+  //     res
+  //       .json({
+  //         insertedCount: result.insertedCount,
+  //         insertedIds: result.insertedIds,
+  //       })
+  //       // .catch(handleError(res));
+  //   });
+  // });
+
+  router.post('/', (req, res) => {
+    const newData = req.body
+    collection
+      .insertOne(newData)
+      .then(result => {res.json({_id: result.insertedId})})
+      .catch((err) => {
+        console.error(err);
+        res.status(500);
+        res.json({ status: 500, error: err });
     });
-  });
+  })
 
   router.delete("/:id", (req, res) => {
     const id = req.params.id;
