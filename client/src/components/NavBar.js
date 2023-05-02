@@ -14,7 +14,7 @@ const NavBar = () => {
     return ( 
         <ul>
         <li><h3>Nav Bar</h3></li>
-        <li><Link to="/api/podcasts">Home image</Link></li>
+        <li><Link to="/">Home image</Link></li>
         <li onClick={handleClick}><SideMenu /></li>
         </ul>
      );

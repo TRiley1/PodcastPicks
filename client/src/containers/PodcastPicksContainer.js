@@ -48,18 +48,18 @@ const PodcastPicksContainer = () => {
         <NavBar />
         <Routes>
           <Route
-            path="/api/podcasts"
+            path="/"
             element={<Home shows={shows} addFav={addFav} favShows={favShows}/>}
           />
           <Route
-            path="/api/podcasts/favourites"
+            path="/favourites"
             element={<Favourites favShows={favShows} />}
           />
           <Route
-            path="api/podcasts/explore"
+            path="/explore"
             element={<PodcastByGenre addFav={addFav} />}
           />
-          <Route path="api/podcasts/about" element={<About />} />
+          <Route path="/about" element={<About />} />
         </Routes>
       </Router>
     </>
