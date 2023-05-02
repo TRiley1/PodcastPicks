@@ -29,6 +29,10 @@ const PodcastDetail = ({accessToken, shows}) => {
 
     console.log(selected)
 
+    if (selected == null || selected.length === 0) {
+      return <p>Loading...</p>;
+    }
+
     if (!selected) return
     const mapped = selected.episodes.items.slice(0, 10).map((episode, index) => {
         return <Episode episode={episode} key={index}/>
