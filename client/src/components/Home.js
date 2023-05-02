@@ -31,6 +31,7 @@ const Home = ({ shows, addFav }) => {
   return (
     <>
       <h1 className="home-button"><HomeIcon/></h1>
+
       <Search searchHome={searchHome}/>
       <OurPicks shows={filterShows} addFav={addFav} />
     </>

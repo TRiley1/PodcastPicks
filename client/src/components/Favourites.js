@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const Favourites = ({ favShows, handleFavClick }) => {
   if (!favShows) return;
 
-  const favShowsList = favShows.map((show, index) => {
+  const favShowsList = favShows.map((show) => {
     return (
       <Link to={`http://localhost:3000/podcast/${show.id}`}>
         <img src={show.images[2].url} />
