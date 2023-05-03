@@ -1,0 +1,124 @@
+.App {
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  .home-logo-container {
+    
+  }
+  
+  .home-logo {
+    background-color: white;
+    border-style: none;
+    transition: transform 0.5s ease;
+    transition: box-shadow 0.2s ease;
+    padding: 10px;
+    font-size: 2.5rem;
+    font-family: Lobster;
+    position: fixed;
+    top: 15px;
+    left: 30px;
+    text-decoration: none;
+  }
+  
+  .home-logo:hover {
+    cursor: pointer;
+    border-radius: 5px;
+    border-color: black;
+    padding: 10px;
+    background-color: #00a676;
+  }
+  
+  .home-logo:visited {
+    color: black;
+  }
+  
+  .menu-button {
+    position: fixed;
+    top: 15px;
+    right: 30px;
+    background: none;
+    border-style: none;
+    transition: transform 0.5s ease;
+    transition: box-shadow 0.2s ease;
+    padding: 10px;
+  }
+  
+  .menu-button :hover {
+    cursor: pointer;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    border-color: black;
+    background-color: #00a676;
+    padding: 10px;
+  }
+  
+  .navbar-container {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    background-color: #00a676;
+    padding-top: 330px;
+  }
+  
+  .navbar-header {
+    list-style: none;
+    text-decoration: none;
+    align-items: center;
+    margin-right: 35px;
+    margin-top: -200px;
+    margin-bottom: 200px;
+    font-family: lobster;
+    color: white;
+    font-size: 3rem;
+  }
+  
+  .navbar-li {
+    list-style: none;
+    font-family: lobster;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-size: 2.5rem;
+  }
+  
+  .navbar-button {
+    text-decoration: none;
+    margin-right: 35px;
+    color: white;
+    border-style: solid;
+    border-color: white;
+    border-radius: 40px;
+    padding: 10px
+  }
+  
+  .navbar-button:visited {
+    color: white;
+  }
+  
+  .navbar-button:hover {
+    background-color: white;
+    color: #00a676;
+  
+  }
+  
+  .close-menu-button {
+    position: fixed;
+    top: 30px;
+    right: 30px;
+    background: none;
+    border-style: none;
+    transition: transform 0.5s ease;
+    transition: box-shadow 0.2s ease;
+    padding: 10px;
+  }
+  
+  .close-menu-button :hover {
+    cursor: pointer;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    border-radius: 40px;
+    border-style: dotted;
+    border-color: black;
+    background-color: #00a676;
+    padding: 10px;
+  }

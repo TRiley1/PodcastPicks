@@ -1,8 +1,6 @@
 import OurPicks from "./OurPicks";
 import Search from "./Search";
-import React, { useState, useEffect } from 'react';
-import HomeIcon from "./icons/HomeIcon";
-
+import React, { useState, useEffect } from "react";
 
 const Home = ({ shows, addFav, favShows, handleFavDelete }) => {
 
@@ -10,26 +8,26 @@ const Home = ({ shows, addFav, favShows, handleFavDelete }) => {
   const [filterShows, setFilterShows] = useState(shows)
 
   useEffect(() => {
-    const searchTerm = search.toLowerCase()
-  
+    const searchTerm = search.toLowerCase();
+
     const searchFilter = shows.filter((show) => {
-        return show.name.toLowerCase().includes(searchTerm)
-    })
-  
+      return show.name.toLowerCase().includes(searchTerm);
+    });
+
     if (searchFilter.length === 0) {
-      setFilterShows(shows)
+      setFilterShows(shows);
     } else {
-      setFilterShows(searchFilter)
+      setFilterShows(searchFilter);
     }
-  }, [search, shows])
-  
+  }, [search, shows]);
 
   const searchHome = (value) => {
-    setSearch(value)
-  }
+    setSearch(value);
+  };
 
   return (
     <>
+
       <h1 className="home-button"><HomeIcon/></h1>
 
       <Search searchHome={searchHome}/>

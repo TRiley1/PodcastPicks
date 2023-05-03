@@ -1,21 +1,28 @@
-import { BrowserRouter as Router, Routes, Route, useParams } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  useParams,
+} from "react-router-dom";
 import React, { useState, useEffect } from "react";
 import Favourites from "../components/Favourites";
 import Explore from "../components/Explore";
 import About from "../components/About";
 import Home from "../components/Home";
 import PodcastDetail from "../components/PodcastDetail";
-import SideMenu from '../components/SideMenu'
+import SideMenu from "../components/SideMenu";
+import { Link } from "react-router-dom";
 
 const PodcastPicksContainer = () => {
   const [shows, setShows] = useState([]);
   const [favShows, setFavShows] = useState([]);
-  
-
 
   useEffect(() => {
     getShows();
-    getFaves()
+  }, []);
+
+  useEffect(() => {
+    getFaves();
   }, []);
 
   const showsUrl =
@@ -24,6 +31,7 @@ const PodcastPicksContainer = () => {
   const accessToken =
 
     "BQAyIN04AL9qGa9iOw64FISUlmMxfTGmZAIJthLKr7Jggb0cgPIO9b_VZ_KO2kSbq5dW8vuCTFkSZN4VM1l7p7-khD2sM4ZlvOq2ml5MZOaLpJ4rmOhc";
+
 
 
 
@@ -43,10 +51,11 @@ const PodcastPicksContainer = () => {
       });
   };
 
-  const getFaves = () => {fetch("http://localhost:9000/api/podcasts")
-    .then(res => res.json())
-    .then(data => setFavShows(data))
-  }
+  const getFaves = () => {
+    fetch("http://localhost:9000/api/podcasts")
+      .then((res) => res.json())
+      .then((data) => setFavShows(data));
+  };
   const addFav = (show) => {
     if (favShows.includes(show)) return
     setFavShows([...favShows, show]);
@@ -62,7 +71,13 @@ const PodcastPicksContainer = () => {
   return (
     <>
       <Router>
+        
         <SideMenu />
+        <div classname="home-logo-container">
+          <Link to="/" className="home-logo">
+            PP
+          </Link>
+        </div>
         <Routes>
           <Route
             path="/"
@@ -70,7 +85,7 @@ const PodcastPicksContainer = () => {
           />
           <Route
             path="/podcast/:id"
-            element={<PodcastDetail shows={shows} accessToken={accessToken}/>}
+            element={<PodcastDetail shows={shows} accessToken={accessToken} />}
           />
           <Route
             path="/favourites"
@@ -78,7 +93,7 @@ const PodcastPicksContainer = () => {
           />
           <Route
             path="/explore"
-            element={<Explore addFav={addFav} shows={shows}/>}
+            element={<Explore addFav={addFav} shows={shows} />}
           />
           <Route path="/about" element={<About />} />
         </Routes>
