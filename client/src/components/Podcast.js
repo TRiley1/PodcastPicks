@@ -36,6 +36,7 @@ const Podcast = ({ show, addFav, favShows, handleFavDelete }) => {
 
   return (
     <div>
+
       <Link to={`podcast/${show.id}`}>
         <img src={show.images[2].url} />
         <h5>{show.name}</h5>
@@ -47,6 +48,7 @@ const Podcast = ({ show, addFav, favShows, handleFavDelete }) => {
         <button onClick={handleFavClick}> Add Fave</button>
       )}
     </div>
+
   );
 };
 
