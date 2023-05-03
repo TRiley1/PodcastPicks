@@ -12,9 +12,9 @@ const SideMenu = () => {
   
     return (
       <div>
-        <button onClick={toggleMenu} className="menu-button"><BurgerMenu /></button>
+        {!isMenuOpen && <button onClick={toggleMenu} className="menu-button"><BurgerMenu /></button>}
         <div className={`sidemenu ${isMenuOpen ? 'open' : 'closed'}`}>
-          {isMenuOpen && <NavBar />}
+          {isMenuOpen && <NavBar toggleMenu={toggleMenu}/>}
         </div>
       </div>
     );
