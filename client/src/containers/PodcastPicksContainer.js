@@ -30,7 +30,7 @@ const PodcastPicksContainer = () => {
   
   const accessToken =
 
-    "BQAyIN04AL9qGa9iOw64FISUlmMxfTGmZAIJthLKr7Jggb0cgPIO9b_VZ_KO2kSbq5dW8vuCTFkSZN4VM1l7p7-khD2sM4ZlvOq2ml5MZOaLpJ4rmOhc";
+    "BQBTUozRjQRwJvKifysBVAB1_wRaWnT56aY4K8XkeR3wuoyHdCQIsYHcuGZMxvOnMedvAy7SEzVNAkKoQjwCR9fHG2GTZKI7UkZCExnnVdVnhR_iXusS";
 
 
 
@@ -73,11 +73,6 @@ const PodcastPicksContainer = () => {
       <Router>
         
         <SideMenu />
-        <div classname="home-logo-container">
-          <Link to="/" className="home-logo">
-            PP
-          </Link>
-        </div>
         <Routes>
           <Route
             path="/"
