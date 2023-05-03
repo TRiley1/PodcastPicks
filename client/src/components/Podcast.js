@@ -33,7 +33,7 @@ const Podcast = ({ show, addFav }) => {
           <h5>{show.name}</h5>
         </Link>
         <button onClick={handleFavClick}>
-
+        favourite
         </button>
 
     
