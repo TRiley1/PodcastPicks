@@ -13,9 +13,6 @@ const NavBar = ({ toggleMenu }) => {
           </button>
         </div>
         <ul>
-          <li className="navbar-header">
-            <h3>Menu</h3>
-          </li>
           <li className="navbar-li">
             <Link to="/" className="navbar-button" onClick={toggleMenu}>
               Home
