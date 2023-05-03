@@ -29,7 +29,11 @@ const PodcastPicksContainer = () => {
     "https://api.spotify.com/v1/shows?ids=4rOoJ6Egrf8K2IrywzwOMk,7g6RO74SVquuVd8sbwzk7q,0Z0KhuivFm1Ry4WIpWspPv,7iQXmUT7XGuZSzAMjoNWlX,1L4biGtn1rrp8yBmV0MFlb,6cKm5noj2BK3M2mJKcXswC,68XHjBcgGBEA8HQcIHZwl5,1Ysx8g1Iw42gESAtegrFaH,1Zuurv8AZFWti60lSXiDgz,3g89DYSv46rN1AnYmBjDgc,7oZTRX8Q4OtD1SgKRbiXw5,5yl10o2UFyMc9vzVKXVQ3o,0azMejb7zrmAqctVsUSAdq,79CkJF3UJTHFV8Dse3Oy0P,6olvQhNhQwMbGG26t3rVgM,5iaZ78Bqj6Jgrcqjs6NBG7,2K186zrvRgeE2w0wQjbaw7,0XrOqvxlqQI6bmdYHuIVnr,7zdc2S4VPAGPYJ3ecjzBNh,1xDawqT8Cgm6HAnbpFX5T5,63hkYLOuRSVzhFNmMLX8wK,4UjhcQPewUJwOgGHWtjTuC,7bnjJ7Va1nM07Um4Od55dW,7Cvsbcjhtur7nplC148TWy,2F9rNDThYAfyLdy9Pv3t0i,3gaGfrqgnVqUBNDdtv5p3S,0zXLdM0YV1ukb8p8WzEG6D,6ixcVOUX3HR8WiVohQJXLF&market=GB";
   
   const accessToken =
-    "BQC10vbygyhL4ynEhqpBomXwoSIjeLitOw6RDTf0KdPE_P5DjAHPRZcbremdvfMoFrPOUrbZqHy723yrvLUpKdyHnUbINLMqXuRLpiXhOQt61FU12XuL";
+
+    "BQA2SnMI8ApHXRFH9er00Ewuwcoch_OvTMLDaFoQ6RfQWQ1jOadk42YAx7KjXu6MXWxcifr2GWC-ZsyaqW6jTw2Ep4-fzF8W8KrJOrORZVzK6xpnHGSM";
+
+
+
 
   const getShows = () => {
     fetch(showsUrl, {
@@ -69,12 +73,6 @@ const PodcastPicksContainer = () => {
       <Router>
         
         <SideMenu />
-        <div classname="home-logo-container">
-          <Link to="/" className="home-logo">
-            PP
-          </Link>
-          <h2 className="our-picks-header">PodcastPicks</h2>
-        </div>
         <Routes>
           <Route
             path="/"

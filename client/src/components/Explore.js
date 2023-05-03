@@ -1,7 +1,10 @@
-import Podcast from "./Podcast";
 import React, { useState, useEffect } from "react";
+import Podcast from "./Podcast";
+import styled from "styled-components";
+import {StyledItem, StyledContainerFav, StyledImageFav, StyledTitleFav} from "./StyledComponents"
+import { Link } from "react-router-dom";
 
-const Explore = ({ shows }) => {
+const Explore = ({ shows, favShows, addFav, handleFavDelete }) => {
   const [sortedShows, setSortedShows] = useState(shows);
   const [searchText, setSearchText] = useState("");
 
@@ -12,8 +15,19 @@ const Explore = ({ shows }) => {
   if (!shows) return;
   
 
+  console.log(sortedShows);
+
   const sortedShowsToMapThrough = sortedShows.map((show, index) => {
-    return <Podcast show={show} key={index} />;
+    return (
+      <StyledContainerFav>
+        <StyledItem>
+          <Link to={`http://localhost:3000/podcast/${show.id}`}>
+            <StyledTitleFav>{show.name}</StyledTitleFav>
+            <StyledImageFav src={show.images[1].url} />
+          </Link>
+        </StyledItem>
+      </StyledContainerFav>
+    );
   });
 
   const searchShows = (event) => {
@@ -34,13 +48,12 @@ const Explore = ({ shows }) => {
     setSortedShows(aToZShows);
   };
 
-
   const sortKidFriendly = () => {
     const kidFriendlyShows = shows.filter((show) => show.explicit === false);
     setSortedShows(kidFriendlyShows);
   };
 
-  return (
+  return shows ? (
     <>
       <input
         type="text"
@@ -53,7 +66,7 @@ const Explore = ({ shows }) => {
 
       {sortedShowsToMapThrough}
     </>
-  );
+  ) : null;
 };
 
 export default Explore;
