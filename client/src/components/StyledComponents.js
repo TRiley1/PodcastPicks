@@ -47,8 +47,7 @@ const StyledLink = styled(Link)`
   margin-bottom: 2rem;
   text-transform: capitalize;
   text-decoration: none;
-  &:hover,
-  &:focus{
+  &:hover {
     color: black;
 };  
 `

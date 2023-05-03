@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Podcast from "./Podcast";
 import styled from "styled-components";
-import {StyledItem, StyledContainerFav, StyledImageFav, StyledTitleFav} from "./StyledComponents"
+import {StyledItem, StyledContainerFav, StyledImageFav, StyledTitleFav, StyledLink } from "./StyledComponents"
 import { Link } from "react-router-dom";
 
 const Explore = ({ shows, favShows, addFav, handleFavDelete }) => {
@@ -21,10 +21,10 @@ const Explore = ({ shows, favShows, addFav, handleFavDelete }) => {
     return (
       <StyledContainerFav>
         <StyledItem>
-          <Link to={`http://localhost:3000/podcast/${show.id}`}>
+          <StyledLink to={`http://localhost:3000/podcast/${show.id}`}>
             <StyledTitleFav>{show.name}</StyledTitleFav>
             <StyledImageFav src={show.images[1].url} />
-          </Link>
+          </StyledLink>
         </StyledItem>
       </StyledContainerFav>
     );
