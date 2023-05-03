@@ -1,4 +1,9 @@
 import { Link } from "react-router-dom";
+import { StyledItem, StyledTitle } from "./StyledComponents";
+import { StyledImage } from "./StyledComponents";
+import { StyledButton } from "./StyledComponents";
+import HeartIcon from "./icons/HeartIcon";
+import HeartIconEmpty from "./icons/HeartIconEmpty";
 
 const Podcast = ({ show, addFav, favShows, handleFavDelete }) => {
   if (!show) return null;
@@ -35,20 +40,20 @@ const Podcast = ({ show, addFav, favShows, handleFavDelete }) => {
   };
 
   return (
-    <div>
+    <StyledItem>
 
       <Link to={`podcast/${show.id}`}>
-        <img src={show.images[2].url} />
-        <h5>{show.name}</h5>
+      <StyledTitle>{show.name}</StyledTitle>
+        <StyledImage src={show.images[1].url} />
       </Link>
 
       {favShowIds.includes(show.id) ? ( 
-        <button onClick= {deletePodcast}>Delete</button>
+        <StyledButton onClick= {deletePodcast}><HeartIcon/></StyledButton>
       ) : (
-        <button onClick={handleFavClick}> Add Fave</button>
+        <StyledButton onClick={handleFavClick}><HeartIconEmpty/></StyledButton>
       )}
-    </div>
 
+    </StyledItem>
   );
 };
 
