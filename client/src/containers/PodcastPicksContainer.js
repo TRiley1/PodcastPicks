@@ -32,6 +32,7 @@ const PodcastPicksContainer = () => {
     "BQDyfr9j0NzLVLVIf4INZamBoXUegAPqQZKgDRUKiLTeq9VaKl5DpSzI1xXvBM6TSj1yrt3K-0viuObncp6CTXM5EnD-tFOjTLN-_TXfH3l03FN2ARWb";
 
 
+
   const getShows = () => {
     fetch(showsUrl, {
       method: "GET",
@@ -54,8 +55,16 @@ const PodcastPicksContainer = () => {
       .then((data) => setFavShows(data));
   };
   const addFav = (show) => {
+    if (favShows.includes(show)) return
     setFavShows([...favShows, show]);
   };
+
+  const handleFavDelete = (id) => {
+    const newFavs = favShows.filter((show) => {
+      return show.id !== id
+    })
+    setFavShows(newFavs)
+  }
 
   return (
     <>
@@ -70,7 +79,7 @@ const PodcastPicksContainer = () => {
         <Routes>
           <Route
             path="/"
-            element={<Home shows={shows} addFav={addFav} favShows={favShows} />}
+            element={<Home shows={shows} addFav={addFav} favShows={favShows} handleFavDelete = {handleFavDelete}/>}
           />
           <Route
             path="/podcast/:id"
@@ -78,7 +87,7 @@ const PodcastPicksContainer = () => {
           />
           <Route
             path="/favourites"
-            element={<Favourites favShows={favShows} />}
+            element={<Favourites favShows={favShows} handleFavDelete={handleFavDelete}/>}
           />
           <Route
             path="/explore"

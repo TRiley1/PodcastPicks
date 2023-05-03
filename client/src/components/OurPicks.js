@@ -1,13 +1,15 @@
 import Podcast from "./Podcast";
+import { StyledContainer } from "./StyledComponents";
+import { StyledItem } from "./StyledComponents";
 
-const OurPicks = ({ shows, addFav, isFav, favShows }) => {
+const OurPicks = ({ shows, addFav, isFav, favShows, handleFavDelete }) => {
 
 
   if (!shows) return;
 
 
   const ourShows = shows.map((show, index) => {
-    return <Podcast show={show} key={index} addFav={addFav} isFav={isFav} favShows={favShows} />;
+    return <Podcast show={show} key={index} addFav={addFav} favShows={favShows} handleFavDelete = {handleFavDelete}/>;
  
   });
 
@@ -15,7 +17,9 @@ const OurPicks = ({ shows, addFav, isFav, favShows }) => {
     <>
       <h4 className="our-picks-header">Our Picks</h4>
 
-      {ourShows}
+      <StyledContainer>
+        {ourShows}
+      </StyledContainer>
     </>
   );
 };
