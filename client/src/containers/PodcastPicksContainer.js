@@ -24,7 +24,7 @@ const PodcastPicksContainer = () => {
   const accessToken =
 
 
-    "BQA021PHmke6hFA5Bv7wzDQeXHIr09Nv8E7HMPpDUYrjDtecaA81Q2DIqS7TjCgeDCcLCDN7NR7kGh7DPgo-OFIwndPkf8LmSTx9XwG3OSuO4VeFvh11";
+    "BQBWbLfRcGvaDsi-BZj3pze0BXeHTYRWEKcoLalXqhTF2UrF5ErwYCyhbwxb9O4y6Ajxca-tzqeqiKXKVIFx82vb5yHp19Gp2E3hdBX4sReNCaa2pEml";
 
 
 
@@ -69,7 +69,7 @@ const PodcastPicksContainer = () => {
         <Routes>
           <Route
             path="/"
-            element={<Home shows={shows} addFav={addFav} favShows={favShows} />}
+            element={<Home shows={shows} addFav={addFav} favShows={favShows} handleFavDelete = {handleFavDelete}/>}
           />
           <Route
             path="/podcast/:id"
