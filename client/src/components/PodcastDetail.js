@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom";
 import React, { useState, useEffect } from 'react';
 import Episode from "./Episode";
+import { StyledDescription, StyledEpisodeImg, StyledImage } from "./StyledComponents";
 
 const PodcastDetail = ({accessToken}) => {
     const [selected, setSelected] = useState(null);
@@ -39,9 +40,9 @@ const PodcastDetail = ({accessToken}) => {
 
     return ( 
         <>  
-            {selected ? <img src={selected.images[1].url}/> : null}
-            {selected ? <h3>{selected.description}</h3> : null}
-            <ul>{mapped}</ul>
+            {selected ? <StyledEpisodeImg src={selected.images[1].url}/> : null}
+            {selected ? <StyledDescription>{selected.description}</StyledDescription> : null}
+            {mapped}
         </>
      );
 }

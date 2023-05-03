@@ -10,6 +10,7 @@ const Explore = ({ shows }) => {
   }, [shows]);
 
   if (!shows) return;
+  
 
   const sortedShowsToMapThrough = sortedShows.map((show, index) => {
     return <Podcast show={show} key={index} />;

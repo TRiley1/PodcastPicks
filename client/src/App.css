@@ -21,6 +21,10 @@
   text-decoration: none;
 }
 
+.our-picks-header {
+  font-family: Lobster;
+}
+
 .home-logo:hover {
   cursor: pointer;
   border-radius: 5px;
@@ -121,4 +125,8 @@
   border-color: black;
   background-color: #00a676;
   padding: 10px;
+}
+
+h2 {
+  font-family: lobster;
 }

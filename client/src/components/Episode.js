@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { StyledContainer, StyledEpisode, StyledEpisodeImg, StyledEpisodePlay, StyledFlex, StyledText } from './StyledComponents';
 
 
 const Episode = ({episode}) => {
@@ -18,29 +19,30 @@ const Episode = ({episode}) => {
 
     return ( 
         <>  
-            <li>
-                <span>
-                    <img src={episode.images[2].url}/>
-                    {!isPlaying ? <img
+            <StyledEpisode>
+                    <div>
+                    <StyledEpisodeImg src={episode.images[2].url}/>
+                    {!isPlaying ? <StyledEpisodeImg
                     alt={`Play ${episode.name}`}
-                    src='https://image.freepik.com/free-icon/play-button_318-42541.jpg'
+                    src='/play-button.png'
                     onClick={handlePlayClick}
                     width="50"
-                    /> : null}
-                    {isPlaying ? <img
+                    /> :
+                    <StyledEpisodeImg
                     alt={`Pause ${episode.name}`}
                     src='/pause-symbol-in-circle.png'
                     onClick={handlePauseClick}
                     width="50"
-                    /> : null}
+                    />}
                     <audio
                         id="audioPlayer"
                         src={episode.audio_preview_url} 
-                    />
-                    <a href={episode.external_urls.spotify} target="_blank"><h5>{episode.name}</h5></a>
-                </span>
-                <p>{episode.description}</p>
-            </li>
+                    /></div>
+                    <StyledFlex>
+                    <a href={episode.external_urls.spotify} target="_blank"><h4>{episode.name}</h4></a>
+                    </StyledFlex>
+                <StyledText>{episode.description}</StyledText>
+            </StyledEpisode>
         </>
      );
 }

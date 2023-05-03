@@ -1,7 +1,7 @@
 const About = () => {
     return ( 
         <>
-            <h2>PodcastPicks</h2>
+            <h2>About</h2>
             <h4>Learn about your new favourite app, Podcast Picks, as well as the founders and creators: Aneeqa, Lewis and Thomas...</h4>
             <p>Introducing PodcastPicks, a groundbreaking podcast app crafted with passion and expertise by the brilliant trio, Aneeqa, Thomas, and Lewis. Together, they embarked on a journey to redefine the podcast listening experience, combining their technical prowess and shared love for audio content.</p>
 

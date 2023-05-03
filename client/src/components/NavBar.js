@@ -28,7 +28,7 @@ const NavBar = ({ toggleMenu }) => {
           </li>
           <li className="navbar-li">
             <Link to="/favourites" className="navbar-button" onClick={toggleMenu}>
-              Your Favourites
+              Favourites
             </Link>
           </li>
           <li className="navbar-li">

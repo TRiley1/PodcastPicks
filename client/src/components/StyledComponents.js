@@ -1,4 +1,6 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
+
 
 const StyledContainer = styled.div`
   display: grid;
@@ -6,7 +8,22 @@ const StyledContainer = styled.div`
   gap: 1rem;
   margin: 10px;
   margin-top: 5px;
+  @media (min-width: 768px) {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin: 10px;
+    margin-top: 5px;
+      }
+  @media (min-width: 950px) {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    margin: 10px;
+    margin-top: 5px;
+      }
 `;
+
 const StyledContainerFav = styled.div`
   display: grid;
   grid-template-columns: repeat(1, 1fr);
@@ -16,16 +33,30 @@ const StyledContainerFav = styled.div`
 `;
 
 const StyledTitle = styled.h1`
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   font-weight: bold;
-  color: #333;
+  color: #00A676;
   margin-bottom: 2rem;
   text-transform: capitalize;
 `;
+
+const StyledLink = styled(Link)`
+  font-size: 0.8rem;
+  font-weight: bold;
+  color: #00A676;
+  margin-bottom: 2rem;
+  text-transform: capitalize;
+  text-decoration: none;
+  &:hover,
+  &:focus{
+    color: black;
+};  
+`
+
 const StyledTitleFav = styled.h1`
   font-size: 2rem;
   font-weight: bold;
-  color: #333;
+  color: #00A676;
   margin-bottom: 2rem;
   text-transform: capitalize;
 `;
@@ -37,10 +68,10 @@ const StyledButton = styled.button`
   border: none;
   padding: 0.4rem 0.8rem;
   cursor: pointer;
-  margin-top: 15px
+  margin-top: 15px;
 
   &:hover {
-    background-color: #005f8b;
+    background-color: grey;
   }
 `;
 const StyledButtonFav = styled.button`
@@ -51,7 +82,7 @@ const StyledButtonFav = styled.button`
   cursor: pointer;
 
   &:hover {
-    background-color: #005f8b;
+    background-color: grey;
   }
 `;
 
@@ -66,7 +97,7 @@ const StyledImage = styled.img`
   width: 100px;
   height: 100px;
   margin: 5px;
-  border-radius: 5px
+  border-radius: 10px;
 `
 
 const StyledImageFav = styled.img`
@@ -76,5 +107,44 @@ const StyledImageFav = styled.img`
   margin-right: 5px;
 `
 
+const StyledEpisode = styled.li`
+  list-style: none;
+  padding: 1rem;
+  text-align: center;
+  border-radius: 50px;
+  
+  a {
+    color: #00A676;
+    text-decoration: none;
+
+    &:hover {
+      color: black;
+    }
+  }
+`;
+
+const StyledEpisodeImg = styled.img`
+  margin: 15px;
+  border-radius: 10px;
+`
+
+const StyledText = styled.p`
+  text-align: justify;
+  padding: 30px;
+`
+
+const StyledFlex = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`
+
+const StyledDescription = styled.h3`
+  text-align: justify;
+  border-radius: 5px;
+  height: auto;
+  padding: 5rem;
+`
+
  
-export {StyledContainer,StyledTitle,StyledButton, StyledItem, StyledImage, StyledContainerFav, StyledImageFav, StyledButtonFav, StyledTitleFav}
+export {StyledContainer, StyledText, StyledDescription, StyledFlex, StyledTitle, StyledButton, StyledItem, StyledImage, StyledContainerFav, StyledEpisodeImg, StyledImageFav, StyledButtonFav, StyledTitleFav, StyledEpisode, StyledLink}
