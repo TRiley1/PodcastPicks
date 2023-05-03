@@ -3,9 +3,6 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 
-.home-logo-container {
-}
-
 .home-logo {
   background-color: none;
   border-style: none;
@@ -164,6 +161,17 @@
 }
 
 h2 {
+  font-family: lobster;
+}
+
+.loading {
+  font-family: lobster;
+  margin-top: 120px;
+  font-size: larger;
+}
+
+.addMargin {
+  margin-top: 120px;
   font-family: lobster;
 }
 

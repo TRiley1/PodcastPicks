@@ -23,27 +23,27 @@ const Favourites = ({ favShows, handleFavDelete }) => {
     })
   };
   
-  if (!favShows) return;
 
   const favShowsList = favShows.map((show) => {
     return (
-      <>
-      <div className="fav_container"></div>
       <StyledContainerFav>
         <StyledItem>
           <StyledLink to={`http://localhost:3000/podcast/${show.id}`}>
             <StyledTitleFav>{show.name}</StyledTitleFav>
             <StyledImageFav src={show.images[1].url} /></StyledLink>
-            <div><StyledButtonFav><InfoIcon/></StyledButtonFav>
-          
+            <div><StyledLink to={`http://localhost:3000/podcast/${show.id}`}><StyledButtonFav><InfoIcon/></StyledButtonFav></StyledLink>
           <StyledButtonFav onClick={() => deletePodcast(show.id)}><TrashCan/></StyledButtonFav></div>
         </StyledItem>
       </StyledContainerFav>
-      </>
     );
   });
 
-  return <>{favShowsList}</>;
+  return (
+  <>
+    <h3 className="addMargin">View your favourites here</h3>
+    {favShowsList}
+  </>
+  )
 };
 
 export default Favourites;

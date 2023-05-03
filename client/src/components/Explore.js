@@ -59,7 +59,7 @@ const Explore = ({ shows, favShows, addFav, handleFavDelete }) => {
         type="text"
         value={searchText}
         onChange={searchShows}
-        placeholder="Search keyword..."
+        placeholder="Search..."
         className="explore-search-bar"
       />
       <button onClick={sortKidFriendly} className="explore-button">Kid Friendly Options!</button>

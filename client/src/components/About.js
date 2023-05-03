@@ -5,7 +5,7 @@ const About = () => {
     <div className="about-container">
       <h2>About</h2>
       <h4>
-        Learn about your new favourite app, Podcast Picks, as well as the
+        Learn about your new favourite app, PodcastPicks, as well as the
         founders and creators: Aneeqa, Lewis and Thomas...
       </h4>
       <div className="about-text-container">

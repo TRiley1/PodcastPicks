@@ -30,7 +30,7 @@ const PodcastDetail = ({accessToken}) => {
     console.log(selected)
 
     if (selected == null || selected.length === 0) {
-      return <p>Loading...</p>;
+      return <p className="loading">Loading...</p>;
     }
 
     if (!selected) return

@@ -116,7 +116,6 @@ const StyledEpisode = styled.li`
   a {
     color: #00A676;
     text-decoration: none;
-
     &:hover {
       color: black;
     }
