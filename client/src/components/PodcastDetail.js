@@ -1,9 +1,8 @@
 import { useParams } from "react-router-dom";
 import React, { useState, useEffect } from 'react';
-import EpisodeList from "./EpisodeList";
 import Episode from "./Episode";
 
-const PodcastDetail = ({accessToken, shows}) => {
+const PodcastDetail = ({accessToken}) => {
     const [selected, setSelected] = useState(null);
 
     useEffect(() => {
@@ -34,7 +33,7 @@ const PodcastDetail = ({accessToken, shows}) => {
     }
 
     if (!selected) return
-    const mapped = selected.episodes.items.slice(0, 10).map((episode, index) => {
+    const mapped = selected.episodes.items.slice(0, 15).map((episode, index) => {
         return <Episode episode={episode} key={index}/>
     })
 

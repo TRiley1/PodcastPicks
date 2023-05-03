@@ -7,13 +7,14 @@ const OurPicks = ({ shows, addFav, isFav, favShows }) => {
 
 
   const ourShows = shows.map((show, index) => {
-    return <Podcast show={show} key={index} addFav={addFav} isFav={isFav} favShows={favShows}/>;
+    return <Podcast show={show} key={index} addFav={addFav} isFav={isFav} favShows={favShows} />;
  
   });
 
   return (
     <>
       <h4 className="our-picks-header">Our Picks</h4>
+
       {ourShows}
     </>
   );
