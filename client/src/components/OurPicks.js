@@ -1,4 +1,6 @@
 import Podcast from "./Podcast";
+import { StyledContainer } from "./StyledComponents";
+import { StyledItem } from "./StyledComponents";
 
 const OurPicks = ({ shows, addFav, isFav, favShows, handleFavDelete }) => {
 
@@ -15,7 +17,9 @@ const OurPicks = ({ shows, addFav, isFav, favShows, handleFavDelete }) => {
     <>
       <h4 className="our-picks-header">Our Picks</h4>
 
-      {ourShows}
+      <StyledContainer>
+        {ourShows}
+      </StyledContainer>
     </>
   );
 };
