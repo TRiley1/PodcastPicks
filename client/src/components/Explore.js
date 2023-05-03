@@ -54,18 +54,19 @@ const Explore = ({ shows, favShows, addFav, handleFavDelete }) => {
   };
 
   return shows ? (
-    <>
+    <div className="explore-container">
       <input
         type="text"
         value={searchText}
         onChange={searchShows}
         placeholder="Search keyword..."
+        className="explore-search-bar"
       />
-      <button onClick={sortKidFriendly}>Kid Friendly Options!</button>
-      <button onClick={sortAToZ}>All Shows A-Z</button>
+      <button onClick={sortKidFriendly} className="explore-button">Kid Friendly Options!</button>
+      <button onClick={sortAToZ} className="explore-button">All Shows A-Z</button>
 
       {sortedShowsToMapThrough}
-    </>
+    </div>
   ) : null;
 };
 

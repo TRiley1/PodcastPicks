@@ -4,7 +4,6 @@
 }
 
 .home-logo-container {
-  
 }
 
 .home-logo {
@@ -93,7 +92,7 @@
   border-style: solid;
   border-color: white;
   border-radius: 40px;
-  padding: 10px
+  padding: 10px;
 }
 
 .navbar-button:visited {
@@ -103,7 +102,6 @@
 .navbar-button:hover {
   background-color: white;
   color: #00a676;
-
 }
 
 .close-menu-button {
@@ -150,10 +148,70 @@
   border-color: #00a676;
   border-radius: 10px;
   border-width: thick;
+  margin-bottom: 20px;
 }
 
-
+.explore-search-bar {
+  margin-top: 20px;
+  line-height: 2rem;
+  font-size: 2rem;
+  font-family: lobster;
+  border-style: solid;
+  border-color: #00a676;
+  border-radius: 10px;
+  border-width: thick;
+  margin-bottom: 20px;
+}
 
 h2 {
   font-family: lobster;
+}
+
+.podcast-detail-container {
+  margin-top: 100px;
+}
+
+.explore-container {
+  margin-top: 100px;
+}
+
+.explore-button {
+  text-decoration: none;
+  margin-right: 35px;
+  color: #00a676;
+  border-style: solid;
+  border-color: #00a676;
+  border-radius: 40px;
+  padding: 10px;
+  background-color: white;
+  margin-left: 20px;
+  font-size: 1.4rem;
+}
+
+.explore-button:hover {
+  background-color: #00a676;
+  color: white;
+  cursor: pointer;
+}
+
+.explore-button:visited {
+  color: #00a676;
+}
+
+.about-container {
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.about-text-container {
+  background-color:  rgb(238, 238, 238);
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.fav_container {
+  margin-bottom: 120px;
 }

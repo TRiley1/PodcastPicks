@@ -27,6 +27,8 @@ const Favourites = ({ favShows, handleFavDelete }) => {
 
   const favShowsList = favShows.map((show) => {
     return (
+      <>
+      <div className="fav_container"></div>
       <StyledContainerFav>
         <StyledItem>
           <StyledLink to={`http://localhost:3000/podcast/${show.id}`}>
@@ -37,6 +39,7 @@ const Favourites = ({ favShows, handleFavDelete }) => {
           <StyledButtonFav onClick={() => deletePodcast(show.id)}><TrashCan/></StyledButtonFav></div>
         </StyledItem>
       </StyledContainerFav>
+      </>
     );
   });
 

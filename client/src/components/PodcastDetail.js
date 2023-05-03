@@ -39,11 +39,11 @@ const PodcastDetail = ({accessToken}) => {
     })
 
     return ( 
-        <>  
+        <div className="podcast-detail-container">  
             {selected ? <StyledEpisodeImg src={selected.images[1].url}/> : null}
             {selected ? <StyledDescription>{selected.description}</StyledDescription> : null}
             {mapped}
-        </>
+        </div>
      );
 }
  
