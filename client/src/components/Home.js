@@ -28,7 +28,7 @@ const Home = ({ shows, addFav, favShows, handleFavDelete }) => {
   return (
     <>
 
-      <h1 className="home-button"><HomeIcon/></h1>
+      <h1 className="home-button"></h1>
 
       <Search searchHome={searchHome}/>
       <OurPicks shows={filterShows} addFav={addFav} favShows = {favShows} handleFavDelete = {handleFavDelete}/>
