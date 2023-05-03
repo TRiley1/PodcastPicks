@@ -1,6 +1,13 @@
 import Podcast from "./Podcast";
 import { Link } from "react-router-dom";
 import React, { useState, useEffect } from 'react';
+import { StyledImageFav } from "./StyledComponents";
+import { StyledTitleFav } from "./StyledComponents";
+import { StyledItem } from "./StyledComponents";
+import { StyledContainerFav } from "./StyledComponents";
+import { StyledButtonFav } from "./StyledComponents";
+import TrashCan from "./TrashCan";
+import InfoIcon from "./icons/InfoIcon";
 
 
 const Favourites = ({ favShows, handleFavDelete }) => {
@@ -20,13 +27,16 @@ const Favourites = ({ favShows, handleFavDelete }) => {
 
   const favShowsList = favShows.map((show) => {
     return (
-      <>
-        <Link to={`http://localhost:3000/podcast/${show.id}`}>
-          <img src={show.images[2].url} />
-          <h5>{show.name}</h5>
-        </Link>
-        <button onClick={() => deletePodcast(show.id)}>Delete</button>
-      </>
+      <StyledContainerFav>
+        <StyledItem>
+          <Link to={`http://localhost:3000/podcast/${show.id}`}>
+            <StyledTitleFav>{show.name}</StyledTitleFav>
+            <StyledImageFav src={show.images[1].url} />
+            <InfoIcon/>
+          </Link>
+          <StyledButtonFav onClick={() => deletePodcast(show.id)}><TrashCan/></StyledButtonFav>
+        </StyledItem>
+      </StyledContainerFav>
     );
   });
 
