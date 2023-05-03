@@ -18,7 +18,7 @@ const Favourites = ({ favShows, handleFavDelete }) => {
   
   if (!favShows) return;
 
-  const favShowsList = favShows.map((show, index) => {
+  const favShowsList = favShows.map((show) => {
     return (
       <>
         <Link to={`http://localhost:3000/podcast/${show.id}`}>
