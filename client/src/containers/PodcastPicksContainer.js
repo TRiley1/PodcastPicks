@@ -1,34 +1,34 @@
-import { BrowserRouter as Router, Routes, Route, useParams } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  useParams,
+} from "react-router-dom";
 import React, { useState, useEffect } from "react";
 import Favourites from "../components/Favourites";
 import Explore from "../components/Explore";
 import About from "../components/About";
 import Home from "../components/Home";
 import PodcastDetail from "../components/PodcastDetail";
-import SideMenu from '../components/SideMenu'
+import SideMenu from "../components/SideMenu";
+import { Link } from "react-router-dom";
 
 const PodcastPicksContainer = () => {
   const [shows, setShows] = useState([]);
   const [favShows, setFavShows] = useState([]);
-  
-
 
   useEffect(() => {
     getShows();
   }, []);
 
   useEffect(() => {
-    getFaves()
-  }, [])
+    getFaves();
+  }, []);
 
   const showsUrl =
     "https://api.spotify.com/v1/shows?ids=4rOoJ6Egrf8K2IrywzwOMk,7g6RO74SVquuVd8sbwzk7q,0Z0KhuivFm1Ry4WIpWspPv,7iQXmUT7XGuZSzAMjoNWlX,1L4biGtn1rrp8yBmV0MFlb,6cKm5noj2BK3M2mJKcXswC,68XHjBcgGBEA8HQcIHZwl5,1Ysx8g1Iw42gESAtegrFaH,1Zuurv8AZFWti60lSXiDgz,3g89DYSv46rN1AnYmBjDgc,7oZTRX8Q4OtD1SgKRbiXw5,5yl10o2UFyMc9vzVKXVQ3o,0azMejb7zrmAqctVsUSAdq,79CkJF3UJTHFV8Dse3Oy0P,6olvQhNhQwMbGG26t3rVgM,5iaZ78Bqj6Jgrcqjs6NBG7,2K186zrvRgeE2w0wQjbaw7,0XrOqvxlqQI6bmdYHuIVnr,7zdc2S4VPAGPYJ3ecjzBNh,1xDawqT8Cgm6HAnbpFX5T5,63hkYLOuRSVzhFNmMLX8wK,4UjhcQPewUJwOgGHWtjTuC,7bnjJ7Va1nM07Um4Od55dW,7Cvsbcjhtur7nplC148TWy,2F9rNDThYAfyLdy9Pv3t0i,3gaGfrqgnVqUBNDdtv5p3S,0zXLdM0YV1ukb8p8WzEG6D,6ixcVOUX3HR8WiVohQJXLF&market=GB";
   const accessToken =
-
-    "BQDjFzlGSdz0HEXLsadjscP_Rbk3cAibJn7lmwXVwzQJU1qsI6fJFRKb_xSjhWD1f7EM_Wcn3m-TM209XerO52MXtu1PQxHguv9YhKziheBYEEieF7Xc";
-
-
-
+    "BQCAct8PPQF1NzUTb3xnq-g7SbaOttyukTUGpprdH30epUMbvmAcg1Km4UhjNwPELje7s8ScBnNCdcYikDTAla2ptrb7kSFP-m1OwnbHGy4Hjpa9DnEu";
 
   const getShows = () => {
     fetch(showsUrl, {
@@ -46,10 +46,11 @@ const PodcastPicksContainer = () => {
       });
   };
 
-  const getFaves = () => {fetch("http://localhost:9000/api/podcasts")
-    .then(res => res.json())
-    .then(data => setFavShows(data))
-  }
+  const getFaves = () => {
+    fetch("http://localhost:9000/api/podcasts")
+      .then((res) => res.json())
+      .then((data) => setFavShows(data));
+  };
   const addFav = (show) => {
     setFavShows([...favShows, show]);
   };
@@ -57,15 +58,21 @@ const PodcastPicksContainer = () => {
   return (
     <>
       <Router>
+        
         <SideMenu />
+        <div classname="home-logo-container">
+          <Link to="/" className="home-logo">
+            PP
+          </Link>
+        </div>
         <Routes>
           <Route
             path="/"
-            element={<Home shows={shows} addFav={addFav} favShows={favShows}/>}
+            element={<Home shows={shows} addFav={addFav} favShows={favShows} />}
           />
           <Route
             path="/podcast/:id"
-            element={<PodcastDetail shows={shows} accessToken={accessToken}/>}
+            element={<PodcastDetail shows={shows} accessToken={accessToken} />}
           />
           <Route
             path="/favourites"
@@ -73,7 +80,7 @@ const PodcastPicksContainer = () => {
           />
           <Route
             path="/explore"
-            element={<Explore addFav={addFav} shows={shows}/>}
+            element={<Explore addFav={addFav} shows={shows} />}
           />
           <Route path="/about" element={<About />} />
         </Routes>

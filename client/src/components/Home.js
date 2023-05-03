@@ -1,7 +1,6 @@
 import OurPicks from "./OurPicks";
 import Search from "./Search";
 import React, { useState, useEffect } from "react";
-import HomeIcon from "./icons/HomeIcon";
 
 const Home = ({ shows, addFav }) => {
   const [search, setSearch] = useState("");
@@ -27,9 +26,7 @@ const Home = ({ shows, addFav }) => {
 
   return (
     <>
-      <div className="home-logo-container">
-        <button className="home-logo">PP</button>
-      </div>
+      
       <Search searchHome={searchHome} />
       <OurPicks shows={filterShows} addFav={addFav} />
     </>
