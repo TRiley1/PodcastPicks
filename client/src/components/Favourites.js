@@ -40,7 +40,7 @@ const Favourites = ({ favShows, handleFavDelete }) => {
 
   return (
   <>
-    <h3 className="addMargin">View your favourites here</h3>
+    <h3 className="addMargin">Favourites</h3>
     {favShowsList}
   </>
   )
