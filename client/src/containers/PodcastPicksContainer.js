@@ -1,11 +1,11 @@
 import { BrowserRouter as Router, Routes, Route, useParams } from "react-router-dom";
 import React, { useState, useEffect } from "react";
-import NavBar from "../components/NavBar";
 import Favourites from "../components/Favourites";
 import Explore from "../components/Explore";
 import About from "../components/About";
 import Home from "../components/Home";
 import PodcastDetail from "../components/PodcastDetail";
+import SideMenu from '../components/SideMenu'
 
 const PodcastPicksContainer = () => {
   const [shows, setShows] = useState([]);
@@ -23,8 +23,6 @@ const PodcastPicksContainer = () => {
   
   const accessToken =
     "BQDScFuHUMb-5fkq8O6hOGGdyb6uwRCG1vhjQSUcqYmC2ScwH7LnV0OL3wD3dnFcili8RYGcAy2eyMXaZycwSBDx319BFpOBX0B7_yf_kNA7QGjp8D12";
-
-
 
 
   const getShows = () => {
@@ -48,17 +46,25 @@ const PodcastPicksContainer = () => {
     .then(data => setFavShows(data))
   }
   const addFav = (show) => {
+    if (favShows.includes(show)) return
     setFavShows([...favShows, show]);
   };
+
+  const handleFavDelete = (id) => {
+    const newFavs = favShows.filter((show) => {
+      return show.id !== id
+    })
+    setFavShows(newFavs)
+  }
 
   return (
     <>
       <Router>
-        <NavBar />
+        <SideMenu />
         <Routes>
           <Route
             path="/"
-            element={<Home shows={shows} addFav={addFav} favShows={favShows} />}
+            element={<Home shows={shows} addFav={addFav} favShows={favShows} handleFavDelete = {handleFavDelete}/>}
           />
           <Route
             path="/podcast/:id"
@@ -66,7 +72,7 @@ const PodcastPicksContainer = () => {
           />
           <Route
             path="/favourites"
-            element={<Favourites favShows={favShows} />}
+            element={<Favourites favShows={favShows} handleFavDelete={handleFavDelete}/>}
           />
           <Route
             path="/explore"

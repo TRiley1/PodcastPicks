@@ -1,23 +1,31 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 import { Link } from "react-router-dom";
-import SideMenu from "./SideMenu";
+import CloseMenu from "./icons/CloseMenu";
 
 const NavBar = () => {
+  return (
+    <>
+    <div className="close-menu-button"><CloseMenu/></div>
+    <ul>
+      <li>
+        <h3>Menu</h3>
+      </li>
+      <li>
+        <Link to="/">Home</Link>
+      </li>
+      <li>
+        <Link to="/explore">Explore</Link>
+      </li>
+      <li>
+        <Link to="/favourites">Your Favourites</Link>
+      </li>
+      <li>
+        <Link to="/about">About</Link>
+      </li>
+    </ul>
+    </>
+  );
+};
 
-    const [isOpen, setIsOpen] = useState(false)
-
-    const handleClick = () => {
-        setIsOpen(!isOpen)
-    }
-
-    return ( 
-        <ul>
-        <li><h3>Nav Bar</h3></li>
-        <li><Link to="/">Home image</Link></li>
-        <li onClick={handleClick}><SideMenu /></li>
-        </ul>
-     );
-}
- 
 export default NavBar;
