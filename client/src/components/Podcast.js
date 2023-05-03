@@ -41,6 +41,7 @@ const Podcast = ({ show, addFav, favShows, handleFavDelete }) => {
 
   return (
     <StyledItem>
+
       <Link to={`podcast/${show.id}`}>
       <StyledTitle>{show.name}</StyledTitle>
         <StyledImage src={show.images[1].url} />
@@ -51,6 +52,7 @@ const Podcast = ({ show, addFav, favShows, handleFavDelete }) => {
       ) : (
         <StyledButton onClick={handleFavClick}><HeartIconEmpty/></StyledButton>
       )}
+
     </StyledItem>
   );
 };
