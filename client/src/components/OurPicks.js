@@ -15,7 +15,7 @@ const OurPicks = ({ shows, addFav, isFav, favShows, handleFavDelete }) => {
 
   return (
     <>
-      <h4 className="our-picks-header">Our Picks</h4>
+      <h4 className="our-picks-header"></h4>
 
       <StyledContainer>
         {ourShows}

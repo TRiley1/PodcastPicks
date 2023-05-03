@@ -13,6 +13,9 @@ const SideMenu = () => {
   return (
     <>
       <div className="top-banner">
+      <div className="banner-title">
+        PodcastPicks
+      </div>
         <div>
           {!isMenuOpen && (
             <button onClick={toggleMenu} className="menu-button">

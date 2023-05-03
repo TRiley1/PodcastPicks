@@ -6,7 +6,7 @@ const Search = ({searchHome}) => {
 
 
     return ( 
-        <input onChange = {handleOnChange} placeholder = "Search..." />
+        <input onChange = {handleOnChange} placeholder = "Search..." className="search-bar"/>
      );
 }
  
