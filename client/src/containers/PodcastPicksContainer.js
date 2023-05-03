@@ -23,7 +23,8 @@ const PodcastPicksContainer = () => {
   
   const accessToken =
 
-    "BQDec8rZXNNJ7tBAmkwUeuMwif8vOt73erp0OayVsxzQvSug8FWeWhQK1sbIZNriQSUwqkomMW70hvdnLFMWgbgkICBBCR9kea9_PX26ccRiflVp6qYs";
+
+    "BQA021PHmke6hFA5Bv7wzDQeXHIr09Nv8E7HMPpDUYrjDtecaA81Q2DIqS7TjCgeDCcLCDN7NR7kGh7DPgo-OFIwndPkf8LmSTx9XwG3OSuO4VeFvh11";
 
 
 
@@ -50,8 +51,16 @@ const PodcastPicksContainer = () => {
     .then(data => setFavShows(data))
   }
   const addFav = (show) => {
+    if (favShows.includes(show)) return
     setFavShows([...favShows, show]);
   };
+
+  const handleFavDelete = (id) => {
+    const newFavs = favShows.filter((show) => {
+      return show.id !== id
+    })
+    setFavShows(newFavs)
+  }
 
   return (
     <>
@@ -68,7 +77,7 @@ const PodcastPicksContainer = () => {
           />
           <Route
             path="/favourites"
-            element={<Favourites favShows={favShows} />}
+            element={<Favourites favShows={favShows} handleFavDelete={handleFavDelete}/>}
           />
           <Route
             path="/explore"
