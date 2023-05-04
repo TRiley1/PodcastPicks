@@ -105,13 +105,22 @@ const StyledImageFav = styled.img`
   border-radius: 20px;
   margin-right: 5px;
 `
+const StyledContainerEp = styled.div`
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin: 10px;
+  margin-top: 5px;
+  margin-left: auto;
+  margin-right: auto;
+`;
 
 const StyledEpisode = styled.li`
   list-style: none;
   padding: 1rem;
   text-align: center;
   border-radius: 50px;
-  
+  background-color: #eee;
   a {
     color: #00A676;
     text-decoration: none;
@@ -143,6 +152,5 @@ const StyledDescription = styled.h3`
   height: auto;
   padding: 5rem;
 `
-
  
-export {StyledContainer, StyledText, StyledDescription, StyledFlex, StyledTitle, StyledButton, StyledItem, StyledImage, StyledContainerFav, StyledEpisodeImg, StyledImageFav, StyledButtonFav, StyledTitleFav, StyledEpisode, StyledLink}
+export {StyledContainer, StyledText, StyledContainerEp, StyledDescription, StyledFlex, StyledTitle, StyledButton, StyledItem, StyledImage, StyledContainerFav, StyledEpisodeImg, StyledImageFav, StyledButtonFav, StyledTitleFav, StyledEpisode, StyledLink}
