@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { StyledContainer, StyledEpisode, StyledEpisodeImg, StyledEpisodePlay, StyledFlex, StyledText } from './StyledComponents';
+import { StyledContainerEp, StyledEpisode, StyledEpisodeImg, StyledEpisodePlay, StyledFlex, StyledItem, StyledText } from './StyledComponents';
 
 
 const Episode = ({episode}) => {
@@ -19,6 +19,7 @@ const Episode = ({episode}) => {
 
     return ( 
         <>  
+            <StyledContainerEp>
             <StyledEpisode>
                     <div>
                     <StyledEpisodeImg src={episode.images[2].url}/>
@@ -43,6 +44,8 @@ const Episode = ({episode}) => {
                     </StyledFlex>
                 <StyledText>{episode.description}</StyledText>
             </StyledEpisode>
+            </StyledContainerEp>
+            
         </>
      );
 }
