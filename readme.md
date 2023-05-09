@@ -17,3 +17,10 @@ Extensions:
 - Recommendations 
 - Search Bar
 
+Dependencies: 
+
+- cors: ^2.8.5,
+- express: ^4.18.2,
+- mongodb: ^5.3.0
+  
+
